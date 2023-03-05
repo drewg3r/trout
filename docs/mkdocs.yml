@@ -20,6 +20,11 @@ theme:
         name: Switch to dark mode
 
 markdown_extensions:
+  - abbr
+  - attr_list
+  - pymdownx.snippets:
+      auto_append:
+        - includes/glossary.md
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
