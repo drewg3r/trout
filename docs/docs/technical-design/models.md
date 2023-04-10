@@ -12,32 +12,38 @@ erDiagram
 ```
 
 **Route**
+
 | column name | description | example |
 |-------------|-------------|----------|
 | `id` | primary key | `1` |
 | `name` | Route name | '376', 'M1' |
+| `connections` | One-to-many relation to `Connection` | |
 
 **Connection**
-| column name | description | example |
-|-------------|-------------|----------|
-| `id` | primary key | `1` |
-| route_id | foreign key to `Route` | '2', '7' |
-| departure_stop | foreign key to `Stop` | '1', '15' |
-| departure_time | the time when route departs | '5,30 6-22 * * Wed' |
 
-**Arrival**
 | column name | description | example |
 |-------------|-------------|----------|
 | `id` | primary key | `1` |
-| connection_id | foreign key to `Connection` | '2', '7' |
-| next_stop | foreign key to `Stop` | '1', '15' |
-| stop_time | time in minutes from departure to stop | '23', '81' |
+| `departure_cron` | the time when route departs | '5,30 6-22 * * Wed' |
+| `waypoints` | One-to-many relation to `Waypoint` |  |
+| `route` | Many-to-one relation to `Route` |  |
 
-**Stop**
+**Waypoint**
+
 | column name | description | example |
 |-------------|-------------|----------|
 | `id` | primary key | `1` |
-| `name` | Stop full name | Obolonsky ave. |
+| `station` | Many-to-one relation to `Station` | 'Politekhnichnyi instytut' |
+| `connection` | Many-to-one relation to `Connection` | |
+| `trip_time` | time in seconds from departure to stop | '60', '3850' |
+
+**Station**
+
+| column name | description | example |
+|-------------|-------------|----------|
+| `id` | primary key | `1` |
+| `name` | Stop full name | 'Politekhnichnyi instytut' |
+| `waypoints` | One-to-many relation to `Waypoint` |  |
 
 
 ### Route examples
