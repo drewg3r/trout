@@ -1,4 +1,4 @@
-# Data models (work in progress)
+# Data models
 
 ```mermaid
 ---
@@ -7,8 +7,8 @@ title: ER diagram
 erDiagram
 
 	Route ||--o{ Connection : "runs on"
-	Connection ||--o{ Arrival : ""
-	Arrival }o--|| Station : "stops at"
+	Connection ||--o{ Waypoint : ""
+	Waypoint }o--|| Station : "stops at"
 ```
 
 
@@ -76,7 +76,7 @@ departures at 11:30 on 1, 10 and 20 day of month.
 
 **Connection**
 
-| id | name | departure_cron | first_station | disabled | waypoints | route | 
+| id | name | departure_cron | disabled | waypoints | route | 
 |-------------|-------------|----------|----------|----------|----------|
 | 1 | 'Kyiv-Lviv' | '30 11 1,10,20 * * ' | False | waypiont 1 | route 1 | 
 
@@ -186,7 +186,7 @@ It departures every day at 7:00 and 19:00 from Kyiv, at 9:00 and
 **Connection**
 
 | id | name | departure_cron | disabled | waypoints | route | 
-|-------------|-------------|----------|----------|----------|----------|----------|
+|-------------|-------------|----------|----------|----------|----------|
 | 1 | 'Kyiv-Lviv' | '0 7,19 * * * ' | False | waypoint 1, waypoint 2, waypoint 3 | route 1 |
 | 2 | 'Lviv-Vinnytsya' | '0 9,21 * * * ' | False | waypoint 4, waypoint 5 | route 1 |
 | 3 | 'Vinnytsya-Kyiv' | '0 8,20 * * * ' | False | waypoint 6, waypoint 7 | route 1 |
@@ -245,7 +245,7 @@ Kyiv.
 **Connection**
 
 | id | name | departure_cron | disabled | waypoints | route | 
-|-------------|-------------|----------|----------|----------|----------|----------|
+|-------------|----------|----------|----------|----------|----------|
 | 1 | '567' | '0 7,19 * * * ' | False | waypoint 1, waypoint 2, waypoint 3, waypoint 4, waypoint 5, waypoint 6, waypoint 7 | route 1 |
 
 **Waypoint**
