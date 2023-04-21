@@ -1,1 +1,26 @@
-venv
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+*.env
+*.sqlite3
+
+# Static files
+staticfiles/
+media/
+
+# Django related files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.bak
+*.swp
+*.swo
+
+# Project configuration files
+.idea/
+*.iml
+*.ipynb_checkpoints/
