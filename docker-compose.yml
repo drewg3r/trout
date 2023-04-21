@@ -1,0 +1,34 @@
+---
+
+version: "3"
+
+services:
+  trout:
+    depends_on:
+      - db
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    environment:
+      DB_HOST: db
+      DJANGO_SECRET_KEY: "testkey"
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin
+      ADMIN_EMAIL: "admin@example.com"
+    volumes:
+      - app_data:/data
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  app_data:
+  db_data:

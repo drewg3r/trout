@@ -1,0 +1,10 @@
+Django~=4.2
+psycopg2~=2.9
+
+json_log_formatter~=0.5
+
+# test requirements
+flake8~=6.0
+pytest~=7.3
+pytest-cov~=4.0
+pytest-django~=4.5
