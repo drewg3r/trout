@@ -1,11 +1,15 @@
-from collections import namedtuple
+from typing import NamedTuple
 from routing.planner.scheduled_route_finder import ScheduledRouteFinder
 
 from datetime import datetime
 from routing.planner.yen_algorithm import yen_algorithm
 
-ScheduledConnection = namedtuple('ScheduledConnection',
-                                 'station_id connection_id departure_from_stop arrival_to_next_stop')
+
+class ScheduledConnection(NamedTuple):
+    station_id: int
+    connection_id: int
+    departure_time: datetime
+    arrival_time: datetime
 
 
 class ScheduledRoute:
@@ -35,7 +39,6 @@ class ScheduledRoute:
 
 
 class BestScheduledRoutes:
-
     scheduled_routes: [ScheduledRoute] = []
 
     def __init__(self, start_station_id: int, end_station_id: int, graph: dict, restore_graph: dict,
@@ -56,7 +59,7 @@ class BestScheduledRoutes:
         for route in routes:
             scheduled_route = ScheduledRoute(self.restore_graph, self.waypoints, route, search_time)
             self.scheduled_routes.append(scheduled_route)
-        return sorted(self.scheduled_routes, key=(lambda conn: conn.scheduled_connection[-1].arrival_to_next_stop))
+        return sorted(self.scheduled_routes, key=(lambda conn: conn.scheduled_connection[-1].arrival_time))
 
     def __call__(self, search_time: datetime, *args, **kwargs):
         return self._order_routes_by_schedule(search_time)

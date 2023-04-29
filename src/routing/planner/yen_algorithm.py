@@ -28,12 +28,3 @@ def yen_algorithm(graph: dict, start: int, end: int, k: int = 5):
                     heapq.heappush(heap, (new_cost, new_path))
 
     return shortest_paths
-
-
-# funtion int int datetime
-# class directions
-
-
-# ordered dict,
-#   key: station id(better station)
-#   value:  datetime
