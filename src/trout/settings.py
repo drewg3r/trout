@@ -155,3 +155,5 @@ LOGGING = {
 }
 
 TROUT_VERSION = environ.get('TROUT_VERSION', 'local dev')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
