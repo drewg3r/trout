@@ -361,11 +361,11 @@
 			
 			\textbf{\MakeUppercase{\guillemotleft Київський політехнічний інститут}}
 			
-			\textbf{\MakeUppercase{імені Ігоря Сікорського\guillemotright}}
+            \textbf{імені \MakeUppercase{Ігоря Сікорського}\guillemotright}
 
-			\textbf{Факультет прикладної математики}
+			\underline{Факультет інформатики та обчислювальної техніки}
 			
-			\textbf{Кафедра прикладної математики}
+			\underline{Кафедра обчислювальної техніки}
 		
 		\endgroup
 		
@@ -374,9 +374,9 @@
 		\setlength\parindent{10cm}
 			{\renewcommand{\arraystretch}{0.8}
 		  \begin{tabular}{l}
-				\invcommas{До захисту допущено} \\
+				До захисту допущено: \\
 				Завідувач кафедри\\
-				\_\_\_\_\_\_\_\_\_\_\_\_\_~О.~Р.~Чертов \\
+				\_\_\_\_\_\_\_\_\_\_\_\_\_~Сергій ~Стіренко \\
 				\invcommas{\_\_\_\_}~\_\_\_\_\_\_\_\_\_\_\_\_\_~\cmdThesis@Title@Year\ р. \\
 			\end{tabular}}
 		\setlength\parindent{0cm}
@@ -384,14 +384,16 @@
 		\addvspace{14pt}
 			
 		\setfontsize{20}
-		\centerline{\textbf{Дипломна робота}}
+		\centerline{\textbf{Дипломний проєкт}}
 		
 		\setfontsize{14}
 		\centerline{\textbf{на здобуття ступеня бакалавра}}
 		
 		\addvspace{6pt}
 		
-		з напряму підготовки 6.040301 \invcommas{Прикладна математика}
+        \centerline{\textbf{за освітньо-професійною програмою \invcommas{Комп'ютерні системи та мережі}}}
+
+        \centerline{\textbf{спеціальності 123 \invcommas{Комп'ютерна інженерія}}}
 
 		\begin{singlespace}
 			на тему: \cmdThesis@Title@ThesisTitle
@@ -411,10 +413,9 @@
 			& \cmdThesis@Title@StudentName &\_\_\_\_\_\_\_\_\_\_\_\_\_\\
 			Керівник & \cmdThesis@Title@Advisor & \_\_\_\_\_\_\_\_\_\_\_\_\_\\
 			\ifundef{\cmdThesis@Title@ConsultantChapter}{\relax}%
-				{Консультант \cmdThesis@Title@ConsultantChapter & \cmdThesis@Title@Consultant & \_\_\_\_\_\_\_\_\_\_\_\_\_\\}
+                {Консультант \cmdThesis@Title@ConsultantChapter & \cmdThesis@Title@Consultant & \_\_\_\_\_\_\_\_\_\_\_\_\_\\}
 			\ifundef{\cmdThesis@Title@ConsultantChapterSecond}{\relax}%
 				{Консультант \cmdThesis@Title@ConsultantChapterSecond & \cmdThesis@Title@ConsultantSecond & \_\_\_\_\_\_\_\_\_\_\_\_\_\\}
-			Консультант із нормоконтролю & старший~викладач Мальчиков~В.~В. & \_\_\_\_\_\_\_\_\_\_\_\_\_\\
 			Рецензент & \cmdThesis@Title@Reviewer & \_\_\_\_\_\_\_\_\_\_\_\_\_\\
 		 \end{tabular*}}
 		
@@ -423,8 +424,8 @@
 		\begin{singlespace}
 			\setlength\parindent{8cm}
 				\begin{tabular}{l}
-					Засвідчую, що в цій дипломній роботі\\
-					немає запозичень із праць інших авторів\\
+					Засвідчую, що у цьому дипломному проєкті\\
+					немає запозичень з праць інших авторів\\
 					без відповідних посилань.\\
 					\ifThesis@Title@StudentMale
 						Студент
@@ -500,22 +501,23 @@
 	  \pagestyle{empty}
 	  \setlength{\parindent}{0cm}
 		\begingroup\centering % центрування
-			\textbf{Національний технічний університет України}
+			\textbf{\MakeUppercase{Національний технічний університет України}}
 			
-			\textbf{\guillemotleft Київський політехнічний інститут}
+			\textbf{\MakeUppercase{\guillemotleft Київський політехнічний інститут}}
 			
-			\textbf{імені Ігоря Сікорського\guillemotright}
-		
-		\endgroup
+            \textbf{імені \MakeUppercase{Ігоря Сікорського}\guillemotright}
 
-			Факультет прикладної математики
+			\underline{Факультет інформатики та обчислювальної техніки}
 			
-			Кафедра прикладної математики
+			\underline{Кафедра обчислювальної техніки}
+
+
+			Рівень вищої освіти --- перший (бакалавр)
 			
-			Рівень вищої освіти --- перший (бакалаврський)
+			Освітньо-професійна програма \invcommas{Комп'ютерні системи та мережі}
 			
-			Напрям підготовки 6.040301 \invcommas{Прикладна математика}
-			
+            Спеціальність 123 \invcommas{Комп'ютерна інженерія}
+
 			\addvspace{14pt} % невеликий відступ
 			
 			\setlength\parindent{10cm}
@@ -523,7 +525,7 @@
 				\begin{tabular}{l}
 					\MakeUppercase{Затверджую} \\
 					Завідувач кафедри\\
-					\_\_\_\_\_\_\_\_\_\_\_\_\_~О.~Р.~Чертов \\
+					\_\_\_\_\_\_\_\_\_\_\_\_\_~Сергій~Стіренко \\
 					\invcommas{\_\_\_\_}~\_\_\_\_\_\_\_\_\_\_\_\_\_~\cmdThesis@Assignment@Year\ р. \\
 				\end{tabular}}
 			\setlength\parindent{0cm}
@@ -533,7 +535,7 @@
 		\begingroup\centering
 			\textbf{\MakeUppercase{Завдання}}
 
-			\textbf{на дипломну роботу} 
+			\textbf{на бакалаврський дипломний проєкт} 
 			\ifThesis@Assignment@StudentMale
 				\textbf{студенту}
 			\else
@@ -544,23 +546,23 @@
 			
 		\endgroup
 
-		1.~Тема роботи: \invcommas{\cmdThesis@Assignment@ThesisTitle},
+		1.~Тема проєкту: \invcommas{\cmdThesis@Assignment@ThesisTitle},
 
-		керівник роботи \cmdThesis@Assignment@Advisor,
+		керівник проєкту \cmdThesis@Assignment@Advisor,
 
 		затверджені наказом по університету від 	\cmdThesis@Assignment@Order.
 
-		2.~Термін подання \ifThesis@Assignment@StudentMale
+		2.~Термін здачі \ifThesis@Assignment@StudentMale
 			студентом
 		\else
 			студенткою
-		\fi роботи:			\cmdThesis@Assignment@ApplicationDate.
+		\fi закінченого проєкту:			\cmdThesis@Assignment@ApplicationDate
 
-		3.~Вихідні дані до роботи: \cmdThesis@Assignment@InputData.
+		3.~Вихідні дані до проєкту: \cmdThesis@Assignment@InputData.
 
-		4.~Зміст роботи: \cmdThesis@Assignment@Contents.
+		4.~Зміст розрахунково-пояснювальної записки: \cmdThesis@Assignment@Contents.
 
-		5.~Перелік ілюстративного матеріалу: \cmdThesis@Assignment@Graphics.
+		5.~Перелік графічного матеріалу: \cmdThesis@Assignment@Graphics.
 
 		\ifundef{\cmdThesis@Assignment@ConsultantChapter}{6.~Дата видачі завдання: \cmdThesis@Assignment@AssignmentDate}%
 			{\begin{samepage}
@@ -571,9 +573,9 @@
 					\renewcommand{\arraystretch}{1.2}
 					\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|>{\raggedright}p{5.7cm}|>{\raggedright}p{5.7cm}|c|c|@{\extracolsep{\fill}}}
 						\hline
-						\multirow{3}{*}{\parbox[t]{5.7cm}{\centering{} Розділ}} & \multirow{3}{*}{\parbox[t]{5.7cm}{\centering{} Прізвище, ініціали та посада консультанта}} & \multicolumn{2}{c|}{Підпис, дата} \\
+						\multirow{3}{*}{\parbox[t]{5.7cm}{\centering{} Розділ}} & \multirow{3}{*}{\parbox[t]{5.7cm}{\centering{} Консультант}} & \multicolumn{2}{c|}{Підпис, дата} \\
 						\cline{3-4}
-						&  & \parbox[t]{5.6em}{\centering{}завдання\\видав} & \parbox[t]{5.6em}{\centering{}завдання\\прийняв} \\
+						&  & \parbox[t]{5.6em}{\centering{}Завдання\\видав} & \parbox[t]{5.6em}{\centering{}Завдання\\прийняв} \\
 						\hline
 						\cmdThesis@Assignment@ConsultantChapter & \cmdThesis@Assignment@Consultant & & \\
 						\ifundef{\cmdThesis@Assignment@ConsultantChapterSecond}{\hline}%
@@ -603,13 +605,13 @@
 			\begin{longtable}{@{\extracolsep{\fill}}|c|>{\raggedright}p{8cm}|c|c|@{\extracolsep{\fill}}}
 				\kill
 				\hline
-				\multirow{2}{*}{\No\ з/п} & \multirow{2}{*}{\parbox[t]{8cm}{\centering Назва етапів виконання\\дипломної роботи}} & \multirow{2}{*}{\parbox[t]{8em}{\centering{}Термін виконання\\етапів роботи}} & \multirow{2}{*}{\parbox[t]{5em}{\centering{}Примітка}} \\
+                \multirow{2}{*}{\No\ з/п} & \multirow{2}{*}{\parbox[t]{8cm}{\centering Найменування етапів \\дипломного проєкту}} & \multirow{2}{*}{\parbox[t]{8em}{\centering{}Термін виконання\\етапів проєкту}} & \multirow{2}{*}{\parbox[t]{5em}{\centering{}Примітки}} \\
 				& & & \\
 				\hline
 				\endfirsthead
 				\kill
 				\hline
-				\multirow{2}{*}{\No\ з/п} & \multirow{2}{*}{\parbox[t]{8cm}{\centering{}Назва етапів виконання\\дипломної роботи}} & \multirow{2}{*}{\parbox[t]{8em}{\centering{}Термін виконання\\етапів роботи}} & \multirow{2}{*}{\parbox[t]{5em}{\centering{}Примітка}} \\
+                \multirow{2}{*}{\No\ з/п} & \multirow{2}{*}{\parbox[t]{8cm}{\centering{}Найменування етапів \\дипломного проєкту}} & \multirow{2}{*}{\parbox[t]{8em}{\centering{}Термін виконання\\етапів проєкту}} & \multirow{2}{*}{\parbox[t]{5em}{\centering{}Примітки}} \\
 				& & & \\
 				\hline
 				\endhead
@@ -624,12 +626,12 @@
 		\renewcommand{\arraystretch}{1.1}
 		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrl}
 			\ifThesis@Assignment@StudentMale
-				Студент
+				Студент-дипломник
 			\else
-				Студентка
+				Студентка-дипломник
 			\fi
 			&  \_\_\_\_\_\_\_\_\_\_\_\_\_ & \cmdThesis@Assignment@StudentNameShort \\
-			Керівник роботи & \_\_\_\_\_\_\_\_\_\_\_\_\_ & \cmdThesis@Assignment@AdvisorNameShort \\
+			Керівник проєкту & \_\_\_\_\_\_\_\_\_\_\_\_\_ & \cmdThesis@Assignment@AdvisorNameShort \\
 		\end{tabular*}
 
 		\clearpage
