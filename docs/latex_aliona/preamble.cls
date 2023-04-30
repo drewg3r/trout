@@ -507,6 +507,8 @@
 			
             \textbf{імені \MakeUppercase{Ігоря Сікорського}\guillemotright}
 
+        \endgroup
+
 			\underline{Факультет інформатики та обчислювальної техніки}
 			
 			\underline{Кафедра обчислювальної техніки}
