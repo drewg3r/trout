@@ -10,7 +10,7 @@ def scheduled_route_finder(restore_graph, waypoints):
 
 
 def test_route_with_transfer_options(scheduled_route_finder):
-    route = scheduled_route_finder(['1', '3', '6', '7'], datetime(2023, 4, 24, 16, 0, 0))
+    route = scheduled_route_finder([1, 3, 6, 7], datetime(2023, 4, 24, 16, 0, 0))
     assert len(route) == 3
     assert route == {
         1: {'arrival_time': datetime(2023, 4, 25, 0, 35),
@@ -26,7 +26,7 @@ def test_route_with_transfer_options(scheduled_route_finder):
 
 
 def test_route_without_transfer(scheduled_route_finder):
-    route = scheduled_route_finder(['1', '2'], datetime(2023, 4, 24, 16, 0))
+    route = scheduled_route_finder([1, 2], datetime(2023, 4, 24, 16, 0))
     assert len(route) == 1
     assert route == {1: {'arrival_time': datetime(2023, 4, 24, 16, 14),
                            'departure_time': datetime(2023, 4, 24, 16, 12),
