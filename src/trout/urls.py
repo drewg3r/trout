@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views import server_error_view, permission_denied_view
+from main.views.common import server_error_view, permission_denied_view
 
 urlpatterns = [
     path('', include('main.urls')),
