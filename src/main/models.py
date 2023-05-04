@@ -25,6 +25,9 @@ class Station(models.Model):
 class Route(models.Model):
     name = models.CharField(max_length=64)
 
+    def __str__(self):
+        return self.name
+
 
 class Connection(models.Model):
     name = models.CharField(max_length=64)
@@ -32,9 +35,15 @@ class Connection(models.Model):
     disabled = models.BooleanField(default=False)
     route = models.ForeignKey(to=Route, on_delete=models.CASCADE, related_name='connections')
 
+    def __str__(self):
+        return f'{self.route.name}: {self.name}'
+
 
 class Waypoint(models.Model):
     station = models.ForeignKey(to=Station, on_delete=models.CASCADE, related_name='waypoints')
     connection = models.ForeignKey(to=Connection, on_delete=models.CASCADE, related_name='waypoints')
     trip_time = models.IntegerField()
     disabled = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.connection} to {self.station}'
