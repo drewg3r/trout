@@ -1,11 +1,10 @@
 INPUT_FILE=diploma
 CLASS_FILE=preamble
 
-all: pdf-clean
+all: pdf
 
-pdf-clean: ## Compile and clean
+pdf: ## Compile and clean
 	xelatex -shell-escape -output-directory=out/ $(INPUT_FILE).tex
-	make clean
 
 clean: ## Remove auxiliary files
 	-rm out/$(INPUT_FILE).log out/$(INPUT_FILE).aux
