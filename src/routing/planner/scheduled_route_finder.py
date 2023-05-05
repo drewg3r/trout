@@ -28,7 +28,7 @@ class ScheduledRouteFinder:
         waypoints_id = self.restore_graph[station_id][next_station_id]
         for waypoint_id in waypoints_id:
             waypoint = self.waypoints[waypoint_id]
-            travel_time = waypoint.travel_time
+            travel_time = waypoint.trip_time
             departure_time = self.next_cron(search_time -
                                             timedelta(minutes=waypoint.time_from_first_station),
                                             waypoint.cron)

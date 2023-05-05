@@ -11,10 +11,10 @@ class ScheduledConnection(NamedTuple):
     connection_id: int
     departure_time: datetime
     arrival_time: datetime
-g
+
 
 class ScheduledRoute:
-    scheduled_connection: [ScheduledConnection] = []
+    scheduled_connection: list[ScheduledConnection]
 
     def __init__(self, restore_graph: dict, waypoints: dict, route: list[int], search_time: datetime):
         self.restore_graph = restore_graph
@@ -40,7 +40,7 @@ class ScheduledRoute:
 
 
 class BestScheduledRoutes:
-    scheduled_routes: [ScheduledRoute] = []
+    scheduled_routes: list[ScheduledRoute]
 
     def __init__(self, start_station_id: int, end_station_id: int, graph: dict, restore_graph: dict,
                  waypoints: dict):
