@@ -5,12 +5,13 @@ from datetime import datetime
 from routing.planner.yen_algorithm import yen_algorithm
 from routing.planner.models_to_graph import create_search_data
 
+
 class ScheduledConnection(NamedTuple):
     station_id: int
     connection_id: int
     departure_time: datetime
     arrival_time: datetime
-
+g
 
 class ScheduledRoute:
     scheduled_connection: [ScheduledConnection] = []
@@ -72,7 +73,7 @@ def find_route(start_station_id: int, end_station_id: int, search_time: datetime
     """
     Main function of this app
     finds best route between given stations
-    and finds best departure time based on search_time
+    and finds the best departure time based on search_time
     Args:
         start_station_id: id of station from which user wants to depart
         end_station_id: id of station to which user wants to get
