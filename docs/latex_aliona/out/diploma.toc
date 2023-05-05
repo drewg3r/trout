@@ -1,0 +1,11 @@
+\babel@toc {ukrainian}{}\relax 
+\contentsline {chapter}{Перелік умовних позначень, скорочень і термінів}{6}{chapter*.3}%
+\contentsline {chapter}{Вступ}{8}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Постановка задачі}{9}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Постановка задачі}{10}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Шаблон розділу}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Template section}{11}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Template subsection}{12}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Image template}{12}{section.3.2}%
+\contentsline {chapter}{Висновки}{13}{chapter*.6}%
+\contentsline {chapter}{Перелік посилань}{14}{chapter*.7}%
