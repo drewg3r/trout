@@ -11,5 +11,6 @@ class RouteEndpointsSelectView(FormView):
     success_url = reverse_lazy('main:landing')
 
     def form_valid(self, form):
-        messages.add_message(self.request, messages.INFO, f'start: {form.cleaned_data["start"]}; end:{form.cleaned_data["destination"]}')
+        messages.add_message(self.request, messages.INFO,
+                             f'start: {form.cleaned_data["start"]}; end:{form.cleaned_data["destination"]}')
         return super().form_valid(form)

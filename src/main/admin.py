@@ -3,9 +3,24 @@ from django.contrib import admin
 from main.models import City, Station, Route, Connection, Waypoint
 
 
+class StationInline(admin.TabularInline):
+    model = Station
+    extra = 0
+
+
+class ConnectionInline(admin.TabularInline):
+    model = Connection
+    extra = 0
+
+
+class WaypointInline(admin.TabularInline):
+    model = Waypoint
+    extra = 0
+
+
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    pass
+    inlines = [StationInline]
 
 
 @admin.register(Station)
@@ -15,12 +30,7 @@ class StationAdmin(admin.ModelAdmin):
 
 @admin.register(Route)
 class RouteAdmin(admin.ModelAdmin):
-    pass
-
-
-class WaypointInline(admin.TabularInline):
-    model = Waypoint
-    extra = 3
+    inlines = [ConnectionInline]
 
 
 @admin.register(Connection)
