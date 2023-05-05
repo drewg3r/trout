@@ -1,0 +1,1 @@
+flake8 --exclude migrations --max-line-length=120
