@@ -3,7 +3,7 @@ from routing.planner.scheduled_route_finder import ScheduledRouteFinder
 
 from datetime import datetime
 from routing.planner.yen_algorithm import yen_algorithm
-
+from routing.planner.models_to_graph import create_search_data
 
 class ScheduledConnection(NamedTuple):
     station_id: int
@@ -61,5 +61,32 @@ class BestScheduledRoutes:
             self.scheduled_routes.append(scheduled_route)
         return sorted(self.scheduled_routes, key=(lambda conn: conn.scheduled_connection[-1].arrival_time))
 
-    def __call__(self, search_time: datetime, *args, **kwargs):
+    def find_several_best_routes(self, search_time: datetime):
         return self._order_routes_by_schedule(search_time)
+
+    def find_one_best_route(self, search_time: datetime):
+        return self.find_several_best_routes(search_time)[0]
+
+
+def find_route(start_station_id: int, end_station_id: int, search_time: datetime):
+    """
+    Main function of this app
+    finds best route between given stations
+    and finds best departure time based on search_time
+    Args:
+        start_station_id: id of station from which user wants to depart
+        end_station_id: id of station to which user wants to get
+        search_time: tome when user wants to depart from start station
+
+    Returns:
+        best route existing with scheduled departure time
+    """
+    routing_graph, restore_graph, waypoints = create_search_data()
+    best_route = BestScheduledRoutes(
+        start_station_id=start_station_id,
+        end_station_id=end_station_id,
+        graph=routing_graph,
+        restore_graph=restore_graph,
+        waypoints=waypoints
+    )
+    return best_route.find_one_best_route(search_time)

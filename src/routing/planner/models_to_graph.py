@@ -28,6 +28,13 @@ class Waypoint(NamedTuple):
 
 
 def create_graph_nodes() -> dict:
+    """
+    Reads stations from database and creates node
+    in graph with station's id
+
+    Returns:
+        a graph that contains only nodes
+    """
     routing_graph = {}
     stations = models.Station.objects.all()
     for station in stations:
@@ -35,7 +42,18 @@ def create_graph_nodes() -> dict:
     return routing_graph
 
 
-def create_graph_edges(routing_graph):
+def create_graph_data(routing_graph):
+    """
+    reads data from Waypoints table in database
+    and creates all data structures needed to find a route
+    Args:
+        routing_graph: a graph that contains nodes(Stations)
+
+    Returns:
+        routing_graph: a dict used to find routes, contains all stations and connections between them
+        restore_graph: a dict used to restore waypoint between stations by their id
+        waypoints: a dict with all data about waypoints needed to find schedules
+    """
     waypoints = models.Waypoint.objects.all()
     waypoints_dict = {}
     restore_graph = {}
@@ -62,11 +80,18 @@ def create_graph_edges(routing_graph):
     return routing_graph, restore_graph, waypoints_dict
 
 
-def create_graph():
+def create_search_data():
+    """
+    Reads data needed to find routes and transforms it
+    to correct datatypes
+    Returns:
+        routing_graph: a dict used to find routes, contains all stations and connections between them
+        restore_graph: a dict used to restore waypoint between stations by their id
+        waypoints: a dict with all data about waypoints needed to find schedules
+    """
     routing_graph = create_graph_nodes()
-    routing_graph, restore_graph, waypoints = create_graph_edges(routing_graph)
+    routing_graph, restore_graph, waypoints = create_graph_data(routing_graph)
     return routing_graph, restore_graph, waypoints
-
 
 
 routing_graph = {
