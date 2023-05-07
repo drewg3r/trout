@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Trout — ???</h1>
+      <p class="col-md-8 fs-4">
+        Some text about how good is trout
+      </p>
+      <a href="{% url "main:route_endpoints_select" %}" class="btn btn-primary btn-lg" type="button">Go find a route!</a>
+    </div>
+  </div>
+{% endblock %}

@@ -7,6 +7,14 @@ from routing.planner.models_to_graph import create_search_data
 
 
 class ScheduledConnection(NamedTuple):
+    """
+    Attributes:
+        station_id: database id of the Station that relates to
+            this ScheduledConnection
+        connection_id: ???
+        departure_time: Departure time from THIS station (self.station_id)
+        arrival_time: Arrival time to NEXT station (cannot be retrieved from this class instance)
+    """
     station_id: int
     connection_id: int
     departure_time: datetime
@@ -69,7 +77,7 @@ class BestScheduledRoutes:
         return self.find_several_best_routes(search_time)[0]
 
 
-def find_route(start_station_id: int, end_station_id: int, search_time: datetime):
+def find_route(start_station_id: int, end_station_id: int, search_time: datetime, dry_run: bool = False):
     """
     Main function of this app
     finds best route between given stations
@@ -77,11 +85,23 @@ def find_route(start_station_id: int, end_station_id: int, search_time: datetime
     Args:
         start_station_id: id of station from which user wants to depart
         end_station_id: id of station to which user wants to get
-        search_time: tome when user wants to depart from start station
+        search_time: time when user wants to depart from start station
+        dry_run: return fixture data instead of real route
 
     Returns:
         best route existing with scheduled departure time
     """
+    if dry_run:
+        class ScheduledRouteMock(ScheduledRoute):
+            def __init__(self, scheduled_connection: list[ScheduledConnection]):
+                self.scheduled_connection = scheduled_connection
+
+        return ScheduledRouteMock(
+            scheduled_connection=[
+                ScheduledConnection(1, 1, datetime(2023, 5, 5, 16, 29), datetime(2023, 5, 5, 16, 39)),
+                ScheduledConnection(6, 1, datetime(2023, 5, 5, 16, 45), datetime(2023, 5, 5, 16, 39)),
+            ]
+        )
     routing_graph, restore_graph, waypoints = create_search_data()
     best_route = BestScheduledRoutes(
         start_station_id=start_station_id,

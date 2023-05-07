@@ -65,10 +65,10 @@ def create_graph_data(routing_graph):
         group = sorted(group, key=key_func_time)
         for waypoint1, waypoint2 in pairwise(group):
             routing_graph[waypoint1.station.id][waypoint2.station.id] = (waypoint2.trip_time - waypoint1.trip_time)
-            if waypoint1.station.id not in restore_graph:
-                restore_graph[waypoint1.station.id] = {waypoint2.station.id: waypoint2.id}
+            if waypoint1.station.id not in restore_graph or waypoint2.station.id not in restore_graph[waypoint1.station.id]:
+                restore_graph[waypoint1.station.id] = {waypoint2.station.id: [waypoint2.id]}
             else:
-                restore_graph[waypoint1.station.id][waypoint2.station.id] = waypoint2.id
+                restore_graph[waypoint1.station.id][waypoint2.station.id].append(waypoint2.id)
             waypoint = Waypoint(
                 id=waypoint2.id,
                 connection_id=waypoint2.connection.id,
