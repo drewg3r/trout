@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -20,6 +21,18 @@ class Station(models.Model):
 
     def __str__(self):
         return f'{self.city}: {self.name}'
+
+    @property
+    def osm_coordinates(self) -> str:
+        return f'{self.latitude},{self.longitude}'
+
+    @property
+    def osm_bbox_coordinates(self) -> str:
+        zoom = settings.OSM_ZOOM
+        return f'{round(float(self.longitude) - zoom, 5)},' \
+               f'{round(float(self.latitude) - zoom, 5)},' \
+               f'{round(float(self.longitude) + zoom, 5)},' \
+               f'{round(float(self.latitude) + zoom, 5)}'
 
 
 class Route(models.Model):
