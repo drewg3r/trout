@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Directions:</h1>
+<h2>
+  {{ origin }} — {{ destination }}
+</h2>
+
+<div>
+  You will be at {{ destination }} at <span>17:20</span> (in 37 minutes).
+</div>
+
+
+  <iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox={{ origin.osm_bbox_coordinates }}&amp;layer=mapnik&amp;marker={{ origin.osm_coordinates }}"></iframe>
+
+<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+  <div class="list-group">
+
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#stationDetailsModal">
+      <div class="align-self-center">
+        <i class="fa fa-map-marker-alt fs-4"></i>
+      </div>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          <h6 class="mb-0">{{ origin }}</h6>
+          <p class="mb-0 opacity-75">
+            <span class="fw-bold">A230</span>
+            <i class="fa fa-arrow-right"></i>
+            <span>Житомир: Центральний автовокзал</span>
+          </p>
+        </div>
+        <small class="opacity-50 text-nowrap">16:41</small>
+      </div>
+    </a>
+
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 ps-5" aria-current="true">
+      <div class="align-self-center">
+        <i class="fa fa-ellipsis-v fs-4"></i>
+      </div>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div class="align-self-center">
+          <h6 class="mb-0">Go 3 stops</h6>
+        </div>
+        <div class="align-self-center">
+          <small class="opacity-50 text-nowrap">about 7 min.</small>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+      <div class="align-self-center">
+        <i class="fa fa-map-marker-alt fs-4"></i>
+      </div>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          <h6 class="mb-0">{{ origin }}</h6>
+          <p class="mb-0 opacity-75">
+            <span class="fst-italic">Change to:</span>
+            <span class="fw-bold">M5</span>
+            <i class="fa fa-arrow-right"></i>
+            <span>Вінниця: центральний автовокзал</span>
+          </p>
+        </div>
+        <small class="opacity-50 text-nowrap">16:51</small>
+      </div>
+    </a>
+
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 ps-5" aria-current="true">
+      <div class="align-self-center">
+        <i class="fa fa-ellipsis-v fs-4"></i>
+      </div>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div class="align-self-center">
+          <h6 class="mb-0">Go 7 stops</h6>
+        </div>
+        <div class="align-self-center">
+          <small class="opacity-50 text-nowrap">about 29 min.</small>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+      <div class="align-self-center">
+        <i class="fa fa-map-marker-alt fs-4"></i>
+      </div>
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div class="align-self-center">
+          <h6 class="mb-0">{{ destination }}</h6>
+{#          <p class="mb-0 opacity-75">#}
+{#            <span class="fst-italic">Change to:</span>#}
+{#            <span class="fw-bold">A230</span>#}
+{#            <i class="fa fa-arrow-right"></i>#}
+{#            <span>Житомир: Центральний автовокзал</span>#}
+{#          </p>#}
+        </div>
+        <div class="align-self-center">
+          <small class="opacity-50 text-nowrap">17:20</small>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+{% include "main/client/modals/station_details.html" with station=origin modal_id="" %}
+{% endblock %}
