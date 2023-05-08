@@ -37,6 +37,8 @@ def create_graph_nodes() -> dict:
     """
     routing_graph = {}
     stations = models.Station.objects.all()
+    print(models.Station.objects.all())
+    print(stations)
     for station in stations:
         routing_graph[station.id] = {}
     return routing_graph
