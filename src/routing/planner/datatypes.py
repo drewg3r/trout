@@ -1,9 +1,10 @@
 from datetime import datetime, timedelta
+from typing import NamedTuple
 
 from main.models import Station
 
 
-class Waypoint:
+class Waypoint(NamedTuple):
     """
     Represents a Station on DirectLine.
 
@@ -17,7 +18,7 @@ class Waypoint:
     departure_time: datetime
 
 
-class DirectLine:
+class DirectLine(NamedTuple):
     """
     Represents *direct* line as a part of requested Route.
 
@@ -51,7 +52,7 @@ class DirectLine:
         return self.waypoints[1:-1]
 
 
-class Route:
+class Route(NamedTuple):
     """
     Represents requested route between origin and destination at specific time.
 
@@ -68,14 +69,22 @@ class Route:
     direct_lines: list[DirectLine]
 
     @property
+    def arrival_waypoint(self) -> Waypoint:
+        return self.direct_lines[0].first_waypoint
+
+    @property
+    def destination_waypoint(self) -> Waypoint:
+        return self.direct_lines[-1].last_waypoint
+
+    @property
     def origin_departure_time(self) -> datetime:
         """Calculated departure time from origin"""
-        return self.direct_lines[0].first_waypoint.departure_time
+        return self.arrival_waypoint.departure_time
 
     @property
     def destination_arrival_time(self) -> datetime:
         """Calculated arrival time to destination"""
-        return self.direct_lines[-1].last_waypoint.arrival_time
+        return self.destination_waypoint.arrival_time
 
     @property
     def travel_time(self) -> timedelta:
