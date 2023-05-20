@@ -1,0 +1,21 @@
+\chapter{Шаблон розділу}
+\label{chap:template}
+
+
+This is a chapter template. You will find here examples of using different
+latex elements (e.g. code listings, images etc). Feel free to add here stuff
+you use:)
+
+You should use it for creating chapters in the document. To create a new
+chapter, follow these steps:
+
+\begin{enumerate}
+    \item create a new directory inside \lstin{content/chapters} with a name in
+        the following format: \lstin{\{chapter\_number\}-chapter-name};
+    \item copy the content of \lstin{content/chapters/99-template-chapter} into newly created directory;
+    \item register the chapter in \lstin{content/chapters.tex} file;
+\end{enumerate}
+
+% Sections
+\input{content/chapters/99-template-chapter/sections/1-template-section/main.tex}
+\input{content/chapters/99-template-chapter/sections/2-template-image/main.tex}
