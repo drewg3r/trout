@@ -1,4 +1,7 @@
 from typing import NamedTuple
+
+from main.models import Station
+from routing.planner.datatypes import Route, DirectLine, Waypoint
 from routing.planner.scheduled_route_finder import ScheduledRouteFinder
 
 from datetime import datetime
@@ -92,16 +95,8 @@ def find_route(start_station_id: int, end_station_id: int, search_time: datetime
         best route existing with scheduled departure time
     """
     if dry_run:
-        class ScheduledRouteMock(ScheduledRoute):
-            def __init__(self, scheduled_connection: list[ScheduledConnection]):
-                self.scheduled_connection = scheduled_connection
+        return route_example
 
-        return ScheduledRouteMock(
-            scheduled_connection=[
-                ScheduledConnection(1, 1, datetime(2023, 5, 5, 16, 29), datetime(2023, 5, 5, 16, 39)),
-                ScheduledConnection(6, 1, datetime(2023, 5, 5, 16, 45), datetime(2023, 5, 5, 16, 39)),
-            ]
-        )
     routing_graph, restore_graph, waypoints = create_search_data()
     best_route = BestScheduledRoutes(
         start_station_id=start_station_id,
@@ -111,3 +106,35 @@ def find_route(start_station_id: int, end_station_id: int, search_time: datetime
         waypoints=waypoints
     )
     return best_route.find_one_best_route(search_time)
+
+
+route_example = Route(
+    origin=Station.objects.get(id=5),
+    destination=Station.objects.get(id=2),
+    departure_time=datetime(2023, 5, 12, 16, 1),
+    direct_lines=[
+        DirectLine(
+            name='A51',
+            end_station=Station.objects.get(id=1),
+            waypoints=[
+                Waypoint(Station.objects.get(id=5), datetime(2023, 5, 14, 16, 7), datetime(2023, 5, 14, 16, 8)),
+                Waypoint(Station.objects.get(id=13), datetime(2023, 5, 14, 16, 14), datetime(2023, 5, 14, 16, 15)),
+                Waypoint(Station.objects.get(id=1), datetime(2023, 5, 14, 16, 24), datetime(2023, 5, 14, 16, 25)),
+            ],
+        ),
+        DirectLine(
+            name='A230',
+            end_station=Station.objects.get(id=2),
+            waypoints=[
+                Waypoint(Station.objects.get(id=1), datetime(2023, 5, 14, 16, 37), datetime(2023, 5, 14, 16, 38)),
+                Waypoint(Station.objects.get(id=7), datetime(2023, 5, 14, 16, 53), datetime(2023, 5, 14, 16, 55)),
+                Waypoint(Station.objects.get(id=8), datetime(2023, 5, 14, 17, 3), datetime(2023, 5, 14, 17, 4)),
+                Waypoint(Station.objects.get(id=9), datetime(2023, 5, 14, 17, 10), datetime(2023, 5, 14, 17, 11)),
+                Waypoint(Station.objects.get(id=10), datetime(2023, 5, 14, 17, 15), datetime(2023, 5, 14, 17, 18)),
+                Waypoint(Station.objects.get(id=12), datetime(2023, 5, 14, 19, 14), datetime(2023, 5, 14, 19, 20)),
+                Waypoint(Station.objects.get(id=11), datetime(2023, 5, 14, 19, 30), datetime(2023, 5, 14, 19, 31)),
+                Waypoint(Station.objects.get(id=2), datetime(2023, 5, 14, 19, 37), datetime(2023, 5, 14, 19, 36)),
+            ],
+        ),
+    ]
+)
