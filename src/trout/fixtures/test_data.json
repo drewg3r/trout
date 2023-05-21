@@ -1,0 +1,1047 @@
+[
+  {
+    "model": "main.city",
+    "pk": 1,
+    "fields": {
+      "name": "Київ"
+    }
+  },
+  {
+    "model": "main.city",
+    "pk": 3,
+    "fields": {
+      "name": "Житомир"
+    }
+  },
+  {
+    "model": "main.city",
+    "pk": 4,
+    "fields": {
+      "name": "Вінниця"
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 1,
+    "fields": {
+      "name": "Центральний автовокзал",
+      "city": 1,
+      "latitude": "50.406569",
+      "longitude": "30.520128",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 2,
+    "fields": {
+      "name": "Центральний автовокзал",
+      "city": 3,
+      "latitude": "50.268319",
+      "longitude": "28.692235",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 3,
+    "fields": {
+      "name": "Центральний автовокзал",
+      "city": 4,
+      "latitude": "49.236517",
+      "longitude": "28.483181",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 4,
+    "fields": {
+      "name": "Центральний вокзал",
+      "city": 4,
+      "latitude": "49.239500",
+      "longitude": "28.510180",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 5,
+    "fields": {
+      "name": "Центральний вокзал",
+      "city": 1,
+      "latitude": "50.440529",
+      "longitude": "30.490003",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 6,
+    "fields": {
+      "name": "Центральний вокзал",
+      "city": 3,
+      "latitude": "50.268856",
+      "longitude": "28.697243",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 7,
+    "fields": {
+      "name": "Повітрофлотський проспект",
+      "city": 1,
+      "latitude": "50.425022",
+      "longitude": "30.461368",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 8,
+    "fields": {
+      "name": "вул. Борщагівська",
+      "city": 1,
+      "latitude": "50.443714",
+      "longitude": "30.442393",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 9,
+    "fields": {
+      "name": "Берестейська",
+      "city": 1,
+      "latitude": "50.458681",
+      "longitude": "30.421506",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 10,
+    "fields": {
+      "name": "Автостанція Дачна",
+      "city": 1,
+      "latitude": "50.455236",
+      "longitude": "30.350152",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 11,
+    "fields": {
+      "name": "вул. Східна",
+      "city": 3,
+      "latitude": "50.266049",
+      "longitude": "28.680665",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 12,
+    "fields": {
+      "name": "вул. Авіаторів",
+      "city": 3,
+      "latitude": "50.282979",
+      "longitude": "28.727548",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 13,
+    "fields": {
+      "name": "ст. м. Олімпійська",
+      "city": 1,
+      "latitude": "50.431327",
+      "longitude": "30.516142",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 14,
+    "fields": {
+      "name": "ст. м. Васильківська",
+      "city": 1,
+      "latitude": "50.393381",
+      "longitude": "30.488167",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 15,
+    "fields": {
+      "name": "Одеська пл.",
+      "city": 1,
+      "latitude": "50.369843",
+      "longitude": "30.458238",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 16,
+    "fields": {
+      "name": "вул. Гетьмана Мазепи",
+      "city": 4,
+      "latitude": "49.229788",
+      "longitude": "28.529552",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 17,
+    "fields": {
+      "name": "вул. Привокзальна",
+      "city": 4,
+      "latitude": "49.232315",
+      "longitude": "28.504389",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 18,
+    "fields": {
+      "name": "ст. м. Іподром",
+      "city": 1,
+      "latitude": "50.376972",
+      "longitude": "30.469783",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 19,
+    "fields": {
+      "name": "вул. Київська",
+      "city": 4,
+      "latitude": "49.242760",
+      "longitude": "28.480826",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 20,
+    "fields": {
+      "name": "вул. Павла Корнелюка",
+      "city": 4,
+      "latitude": "49.258414",
+      "longitude": "28.473059",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 21,
+    "fields": {
+      "name": "вул. Стрілецька",
+      "city": 4,
+      "latitude": "49.244542",
+      "longitude": "28.478382",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.station",
+    "pk": 22,
+    "fields": {
+      "name": "Цегельний завод",
+      "city": 4,
+      "latitude": "49.223155",
+      "longitude": "28.489402",
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.route",
+    "pk": 1,
+    "fields": {
+      "name": "IC26"
+    }
+  },
+  {
+    "model": "main.route",
+    "pk": 2,
+    "fields": {
+      "name": "IC52"
+    }
+  },
+  {
+    "model": "main.route",
+    "pk": 3,
+    "fields": {
+      "name": "А111"
+    }
+  },
+  {
+    "model": "main.route",
+    "pk": 4,
+    "fields": {
+      "name": "A230"
+    }
+  },
+  {
+    "model": "main.route",
+    "pk": 5,
+    "fields": {
+      "name": "А51"
+    }
+  },
+  {
+    "model": "main.route",
+    "pk": 6,
+    "fields": {
+      "name": "M5"
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 1,
+    "fields": {
+      "name": "А111-1",
+      "departure_cron": "30 */2 * * 1-6",
+      "disabled": false,
+      "route": 3
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 2,
+    "fields": {
+      "name": "А111-2",
+      "departure_cron": "30 */1 * * 1-3,5-7",
+      "disabled": false,
+      "route": 3
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 3,
+    "fields": {
+      "name": "А111-3",
+      "departure_cron": "*/45 * * * 1-7",
+      "disabled": false,
+      "route": 3
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 4,
+    "fields": {
+      "name": "А111-4",
+      "departure_cron": "0 */1 */2 * *",
+      "disabled": false,
+      "route": 3
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 5,
+    "fields": {
+      "name": "Київ-Житомир",
+      "departure_cron": "0 11 */2 * *",
+      "disabled": false,
+      "route": 1
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 6,
+    "fields": {
+      "name": "Житомир-Київ",
+      "departure_cron": "0 18 */2 * *",
+      "disabled": false,
+      "route": 1
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 7,
+    "fields": {
+      "name": "A:Вінниця-Київ",
+      "departure_cron": "20 */6 * * 2,5,6",
+      "disabled": false,
+      "route": 2
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 8,
+    "fields": {
+      "name": "B:Київ-Вінниця",
+      "departure_cron": "45 */6 * * 0,3,6",
+      "disabled": false,
+      "route": 2
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 9,
+    "fields": {
+      "name": "К-Ж",
+      "departure_cron": "15 9 * * 1-6",
+      "disabled": false,
+      "route": 4
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 10,
+    "fields": {
+      "name": "Ж-К",
+      "departure_cron": "10 12 * * 1-6",
+      "disabled": false,
+      "route": 4
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 11,
+    "fields": {
+      "name": "51-1",
+      "departure_cron": "0 9 * * 1-6/2",
+      "disabled": false,
+      "route": 5
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 12,
+    "fields": {
+      "name": "51-2",
+      "departure_cron": "0 9 * * 2-7/2",
+      "disabled": false,
+      "route": 5
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 13,
+    "fields": {
+      "name": "до ст. Іподром",
+      "departure_cron": "12 6-22/2 * * 2-7/2",
+      "disabled": false,
+      "route": 6
+    }
+  },
+  {
+    "model": "main.connection",
+    "pk": 14,
+    "fields": {
+      "name": "до автовокзалу",
+      "departure_cron": "00 6-22/2 * * *",
+      "disabled": false,
+      "route": 6
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 1,
+    "fields": {
+      "station": 5,
+      "connection": 1,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 2,
+    "fields": {
+      "station": 6,
+      "connection": 1,
+      "trip_time": 40,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 3,
+    "fields": {
+      "station": 4,
+      "connection": 1,
+      "trip_time": 90,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 4,
+    "fields": {
+      "station": 4,
+      "connection": 2,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 5,
+    "fields": {
+      "station": 6,
+      "connection": 2,
+      "trip_time": 45,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 6,
+    "fields": {
+      "station": 5,
+      "connection": 2,
+      "trip_time": 85,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 7,
+    "fields": {
+      "station": 5,
+      "connection": 3,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 8,
+    "fields": {
+      "station": 6,
+      "connection": 3,
+      "trip_time": 40,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 9,
+    "fields": {
+      "station": 6,
+      "connection": 4,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 10,
+    "fields": {
+      "station": 5,
+      "connection": 4,
+      "trip_time": 43,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 11,
+    "fields": {
+      "station": 5,
+      "connection": 5,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 12,
+    "fields": {
+      "station": 6,
+      "connection": 5,
+      "trip_time": 130,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 13,
+    "fields": {
+      "station": 6,
+      "connection": 6,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 14,
+    "fields": {
+      "station": 5,
+      "connection": 6,
+      "trip_time": 131,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 15,
+    "fields": {
+      "station": 4,
+      "connection": 7,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 16,
+    "fields": {
+      "station": 5,
+      "connection": 7,
+      "trip_time": 238,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 17,
+    "fields": {
+      "station": 5,
+      "connection": 8,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 18,
+    "fields": {
+      "station": 4,
+      "connection": 8,
+      "trip_time": 252,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 19,
+    "fields": {
+      "station": 1,
+      "connection": 9,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 20,
+    "fields": {
+      "station": 7,
+      "connection": 9,
+      "trip_time": 15,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 21,
+    "fields": {
+      "station": 8,
+      "connection": 9,
+      "trip_time": 23,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 22,
+    "fields": {
+      "station": 9,
+      "connection": 9,
+      "trip_time": 29,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 23,
+    "fields": {
+      "station": 10,
+      "connection": 9,
+      "trip_time": 33,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 24,
+    "fields": {
+      "station": 12,
+      "connection": 9,
+      "trip_time": 131,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 25,
+    "fields": {
+      "station": 11,
+      "connection": 9,
+      "trip_time": 121,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 26,
+    "fields": {
+      "station": 2,
+      "connection": 9,
+      "trip_time": 126,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 27,
+    "fields": {
+      "station": 2,
+      "connection": 10,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 28,
+    "fields": {
+      "station": 11,
+      "connection": 10,
+      "trip_time": 5,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 29,
+    "fields": {
+      "station": 12,
+      "connection": 10,
+      "trip_time": 14,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 30,
+    "fields": {
+      "station": 10,
+      "connection": 10,
+      "trip_time": 110,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 31,
+    "fields": {
+      "station": 9,
+      "connection": 10,
+      "trip_time": 114,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 32,
+    "fields": {
+      "station": 8,
+      "connection": 10,
+      "trip_time": 119,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 33,
+    "fields": {
+      "station": 7,
+      "connection": 10,
+      "trip_time": 125,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 34,
+    "fields": {
+      "station": 10,
+      "connection": 10,
+      "trip_time": 140,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 35,
+    "fields": {
+      "station": 1,
+      "connection": 11,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 36,
+    "fields": {
+      "station": 13,
+      "connection": 11,
+      "trip_time": 9,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 37,
+    "fields": {
+      "station": 5,
+      "connection": 11,
+      "trip_time": 16,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 38,
+    "fields": {
+      "station": 14,
+      "connection": 11,
+      "trip_time": 42,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 39,
+    "fields": {
+      "station": 15,
+      "connection": 11,
+      "trip_time": 51,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 40,
+    "fields": {
+      "station": 16,
+      "connection": 11,
+      "trip_time": 207,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 41,
+    "fields": {
+      "station": 17,
+      "connection": 11,
+      "trip_time": 213,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 42,
+    "fields": {
+      "station": 4,
+      "connection": 11,
+      "trip_time": 217,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 43,
+    "fields": {
+      "station": 3,
+      "connection": 11,
+      "trip_time": 225,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 44,
+    "fields": {
+      "station": 3,
+      "connection": 12,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 45,
+    "fields": {
+      "station": 4,
+      "connection": 12,
+      "trip_time": 8,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 46,
+    "fields": {
+      "station": 17,
+      "connection": 12,
+      "trip_time": 12,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 47,
+    "fields": {
+      "station": 16,
+      "connection": 12,
+      "trip_time": 18,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 48,
+    "fields": {
+      "station": 15,
+      "connection": 12,
+      "trip_time": 184,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 49,
+    "fields": {
+      "station": 14,
+      "connection": 12,
+      "trip_time": 195,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 50,
+    "fields": {
+      "station": 5,
+      "connection": 12,
+      "trip_time": 220,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 51,
+    "fields": {
+      "station": 13,
+      "connection": 12,
+      "trip_time": 226,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 52,
+    "fields": {
+      "station": 1,
+      "connection": 12,
+      "trip_time": 235,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 53,
+    "fields": {
+      "station": 1,
+      "connection": 13,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 54,
+    "fields": {
+      "station": 13,
+      "connection": 13,
+      "trip_time": 5,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 55,
+    "fields": {
+      "station": 14,
+      "connection": 13,
+      "trip_time": 13,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 56,
+    "fields": {
+      "station": 18,
+      "connection": 13,
+      "trip_time": 19,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 57,
+    "fields": {
+      "station": 18,
+      "connection": 14,
+      "trip_time": 0,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 58,
+    "fields": {
+      "station": 14,
+      "connection": 14,
+      "trip_time": 5,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 59,
+    "fields": {
+      "station": 13,
+      "connection": 14,
+      "trip_time": 13,
+      "disabled": false
+    }
+  },
+  {
+    "model": "main.waypoint",
+    "pk": 60,
+    "fields": {
+      "station": 3,
+      "connection": 14,
+      "trip_time": 19,
+      "disabled": false
+    }
+  }
+]
