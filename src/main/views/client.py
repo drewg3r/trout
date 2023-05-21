@@ -1,11 +1,9 @@
 from datetime import datetime
 
-from django.contrib import messages
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import FormView, TemplateView
 
 from main.forms import RouteEndpointsSelectForm
-from main.models import Station
 from routing.planner.route_displaying import find_route
 
 
@@ -15,14 +13,25 @@ class RouteEndpointsSelectView(FormView):
     success_url = reverse_lazy('main:landing')
 
     def form_valid(self, form):
-        messages.add_message(self.request, messages.INFO,
-                             f'start: {form.cleaned_data["start"]}; end:{form.cleaned_data["destination"]}')
+        self.form = form
         return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse(
+            'main:route',
+            kwargs={
+                'start_location': self.form.cleaned_data['start'].id,
+                'destination': self.form.cleaned_data['destination'].id,
+                'departure_timestamp': int(datetime.timestamp(self.form.cleaned_data['departure_time'])),
+            }
+        )
 
 
 class RouteView(TemplateView):
     template_name = 'main/client/route.html'
 
+    def build_route(self):
+        return find_route(-1, -1, datetime(2023, 5, 12), dry_run=True)
+
     def get_context_data(self, **kwargs):
-        # route = find_route(1, 2, datetime(2023, 4, 24, 16, 12))
-        return super().get_context_data(**kwargs) | {'origin': Station.objects.get(id=1), 'destination': Station.objects.get(id=8)}
+        return super().get_context_data(**kwargs) | {'route': self.build_route()}

@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{{ form.errors }}
+
 <form method="POST">
   {% csrf_token %}
   <div class="row align-items-md-stretch mb-2">
@@ -18,7 +20,15 @@
         {{ form.destination }}
       </div>
     </div>
+
+    <div class="col-md-6">
+      <div class="bg-body-tertiary border rounded-3 p-3 pt-4">
+        <h2>Departure time</h2>
+        {{ form.departure_time }}
+      </div>
+    </div>
   </div>
+
 
   <div class="row">
     <div class="col-auto">

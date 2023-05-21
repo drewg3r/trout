@@ -8,6 +8,7 @@ from main.models import Station
 class RouteEndpointsSelectForm(forms.Form):
     start = forms.ModelChoiceField(queryset=Station.objects.filter(disabled=False))
     destination = forms.ModelChoiceField(queryset=Station.objects.filter(disabled=False))
+    departure_time = forms.DateTimeField()
 
     def clean(self):
         if self.cleaned_data['start'] == self.cleaned_data['destination']:
