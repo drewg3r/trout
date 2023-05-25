@@ -25,7 +25,8 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(Station)
 class StationAdmin(admin.ModelAdmin):
-    pass
+    ordering = ('city__name', 'name')
+    list_display = ('name', 'city', 'id', 'disabled')
 
 
 @admin.register(Route)
