@@ -105,6 +105,7 @@ def find_route(start_station_id: int, end_station_id: int, search_time: datetime
         restore_graph=restore_graph,
         waypoints=waypoints
     )
+
     return best_route.find_one_best_route(search_time)
 
 
