@@ -3,21 +3,26 @@ from django.db import models
 
 
 class City(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, verbose_name='назва')
 
     class Meta:
-        verbose_name_plural = 'cities'
+        verbose_name = 'місто'
+        verbose_name_plural = 'міста'
 
     def __str__(self):
         return self.name
 
 
 class Station(models.Model):
-    name = models.CharField(max_length=64)
-    city = models.ForeignKey(to=City, on_delete=models.PROTECT, related_name='stations')
-    latitude = models.DecimalField(max_digits=9, decimal_places=6)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6)
-    disabled = models.BooleanField(default=False)
+    name = models.CharField(max_length=64, verbose_name='назва')
+    city = models.ForeignKey(to=City, on_delete=models.PROTECT, related_name='stations', verbose_name='місто')
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, verbose_name='широта')
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, verbose_name='довгота')
+    disabled = models.BooleanField(default=False, verbose_name='тимчасово недоступна')
+
+    class Meta:
+        verbose_name = 'станція'
+        verbose_name_plural = 'станції'
 
     def __str__(self):
         return f'{self.city}: {self.name}'
@@ -36,27 +41,39 @@ class Station(models.Model):
 
 
 class Route(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, verbose_name='назва')
+
+    class Meta:
+        verbose_name = 'маршрут'
+        verbose_name_plural = 'маршрути'
 
     def __str__(self):
         return self.name
 
 
 class Connection(models.Model):
-    name = models.CharField(max_length=64)
-    departure_cron = models.CharField(max_length=64)
-    disabled = models.BooleanField(default=False)
-    route = models.ForeignKey(to=Route, on_delete=models.CASCADE, related_name='connections')
+    route = models.ForeignKey(to=Route, on_delete=models.CASCADE, related_name='connections', verbose_name='маршрут')
+    name = models.CharField(max_length=64, verbose_name='назва')
+    departure_cron = models.CharField(max_length=64, verbose_name='розклад відправлення')
+    disabled = models.BooleanField(default=False, verbose_name='тимчасово недоступнe')
+
+    class Meta:
+        verbose_name = 'сполучення'
+        verbose_name_plural = 'сполучення'
 
     def __str__(self):
         return f'{self.route.name}: {self.name}'
 
 
 class Waypoint(models.Model):
-    station = models.ForeignKey(to=Station, on_delete=models.CASCADE, related_name='waypoints')
-    connection = models.ForeignKey(to=Connection, on_delete=models.CASCADE, related_name='waypoints')
-    trip_time = models.IntegerField()
-    disabled = models.BooleanField(default=False)
+    station = models.ForeignKey(to=Station, on_delete=models.CASCADE, related_name='waypoints', verbose_name='станція')
+    connection = models.ForeignKey(to=Connection, on_delete=models.CASCADE, related_name='waypoints', verbose_name='сполучення')
+    trip_time = models.IntegerField(verbose_name='час в дорозі')
+    disabled = models.BooleanField(default=False, verbose_name='тимчасово недоступна')
+
+    class Meta:
+        verbose_name = 'проміжна зупинка'
+        verbose_name_plural = 'проміжні зупинки'
 
     def __str__(self):
         return f'{self.connection} to {self.station}'

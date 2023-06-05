@@ -25,3 +25,4 @@ media/
 .idea/
 *.iml
 *.ipynb_checkpoints/
+*.mo

@@ -54,5 +54,5 @@ def test_route_from_1_to_5(routing_graph, restore_graph, waypoints):
         assert result[i].scheduled_connection == routes[i]
 
 
-def test_find_route(db):
+def test_find_route(example_data):
     print(find_route(1, 2, datetime(2023, 4, 24, 16, 5)))
