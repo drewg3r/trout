@@ -1,0 +1,10 @@
+\babel@toc {ukrainian}{}\relax 
+\contentsline {chapter}{\numberline {1}НАЙМЕНУВАННЯ ТА ОБЛАСТЬ ЗАСТОСУВАННЯ}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {2}ПІДСТАВИ ДЛЯ РОЗРОБКИ}{2}{chapter.2}%
+\contentsline {chapter}{\numberline {3}МЕТА ТА ПРИЗНАЧЕННЯ РОЗРОБКИ}{2}{chapter.3}%
+\contentsline {chapter}{\numberline {4}ДЖЕРЕЛА РОЗРОБКИ}{3}{chapter.4}%
+\contentsline {chapter}{\numberline {5}ТЕХНІЧНІ ВИМОГИ}{3}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Вимоги до розробленого продукту}{3}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Вимоги до програмного забезпечення}{3}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Вимоги до апаратної частини}{4}{section.5.3}%
+\contentsline {chapter}{\numberline {6}ЕТАПИ РОЗРОБКИ}{4}{chapter.6}%

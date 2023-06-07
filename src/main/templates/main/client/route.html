@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% load time_render %}
+{% load stops_amount_render %}
 
 {% block content %}
 
-<h1>Directions:</h1>
+<h1>Маршрут:</h1>
 <h2>
   {{ route.origin }} — {{ route.destination }}
 </h2>
 
 <div>
-  Arrival time at {{ route.destination }}: <span>{% render_time route.destination_arrival_time %}</span> (в дорозі {% render_timedelta route.travel_time %})
+  Час прибуття до {{ route.destination }}: <span>{% render_time route.destination_arrival_time %}</span> (в дорозі {% render_timedelta route.travel_time %})
 </div>
 
 <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
@@ -41,7 +42,7 @@
           </div>
           <div class="d-flex gap-2 w-100 justify-content-between">
             <div class="align-self-center">
-              <h6 class="mb-0">Go {{ line.intermediate_waypoints|length }} stops</h6>
+              <h6 class="mb-0">Проїдьте {%  render_stops line.intermediate_waypoints|length %}</h6>
             </div>
             <div class="align-self-center">
               <small class="opacity-50 text-nowrap">прибл. {% render_timedelta line.travel_time %}</small>
