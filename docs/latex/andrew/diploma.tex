@@ -2,6 +2,8 @@
 
 \input{config.tex}
 
+\usepackage{nopageno}
+
 \begin{document}
 
 \input{content/titlepage.tex}
@@ -14,9 +16,11 @@
 
 \setcounter{page}{1}
 
+\newgeometry{bottom=5cm, left=4cm}
 \tableofcontents
+\restoregeometry
 
-\input{content/glossary.tex}
+% \input{content/glossary.tex}
 
 \input{content/intro.tex}
 
@@ -28,6 +32,7 @@
 
 \input{content/bibliography.tex}
 
+\newgeometry{bottom=5cm}
 \input{content/applications.tex}
 
 \end{document}

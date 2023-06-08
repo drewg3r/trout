@@ -1,0 +1,40 @@
+{% load time_render %}
+
+<div class="modal modal-lg fade" id="stationDetailsModal{{ modal_id }}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">
+            <span>{{ line.name }}</span>
+            <i class="fa fa-arrow-right"></i>
+            <span>{{ line.end_station }}</span>
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+
+{#            <div>#}
+{#              Arrival: {% render_time waypoint.arrival_time %}#}
+{#            </div>#}
+{##}
+{#            <div>#}
+{#              Departure: {% render_time waypoint.departure_time %}#}
+{#            </div>#}
+            Проміжні зупинки:
+            <ol>
+            {% for waypoint in line.intermediate_waypoints %}
+              <li class="row">
+                  <div class="col-8">{{ waypoint.station }}</div>
+                  <div class="col-4">{{ waypoint.arrival_time }}</div>
+              </li>
+            {% endfor %}
+            </ol>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

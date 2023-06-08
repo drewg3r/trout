@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ form.errors }}
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="row align-items-md-stretch mb-2">
+    <div class="col-md-6">
+      <div class="bg-body-tertiary border rounded-3 p-3 pt-4">
+        <h2>Початкова станція</h2>
+        {{ form.start }}
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="bg-body-tertiary border rounded-3 p-3 pt-4">
+        <h2>Кінцева станція</h2>
+        {{ form.destination }}
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="bg-body-tertiary border rounded-3 p-3 pt-4">
+        <h2>Бажаний час відправлення</h2>
+        <input type="datetime-local" name="departure_time" required="" id="id_departure_time">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-auto">
+      {% for error in form.non_field_errors %}
+        <p class="text-danger">{{ error }}</p>
+      {% endfor %}
+    </div>
+    <div class="col-auto ms-auto">
+      <button type="submit" class="btn btn-primary">Пошук маршруту</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
