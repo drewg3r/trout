@@ -34,7 +34,7 @@
 \RequirePackage{array} % пакет для вирівнювання всередині таблиці
 
 % пакети для форматування відступів та полів
-\RequirePackage[includehead, headsep=0pt, footskip=0pt, top=2cm, bottom=2cm, left=2cm, right=1cm]{geometry} % задаємо поля сторінки
+\RequirePackage[includehead, headsep=0pt, footskip=0pt, top=2cm, bottom=3cm, left=3cm, right=1.5cm]{geometry} % задаємо поля сторінки
 \RequirePackage{indentfirst} % відступ для першого рядка абзацу
 \RequirePackage{hanging} % відступ для всіх інших рядків абзацу
 \RequirePackage[shortlabels]{enumitem}	% пакет для форматування списків
@@ -576,9 +576,9 @@
 					\setfontsize{12}
 					\begin{center}
 					\renewcommand{\arraystretch}{1.2}
-					\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|>{\raggedright}p{5.7cm}|>{\raggedright}p{5.7cm}|c|c|@{\extracolsep{\fill}}}
+					\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|>{\raggedright}p{4.7cm}|>{\raggedright}p{4.7cm}|c|c|@{\extracolsep{\fill}}}
 						\hline
-						\multirow{3}{*}{\parbox[t]{5.7cm}{\centering{} Розділ}} & \multirow{3}{*}{\parbox[t]{5.7cm}{\centering{} Консультант}} & \multicolumn{2}{c|}{Підпис, дата} \\
+						\multirow{3}{*}{\parbox[t]{4.7cm}{\centering{} Розділ}} & \multirow{3}{*}{\parbox[t]{4.7cm}{\centering{} Консультант}} & \multicolumn{2}{c|}{Підпис, дата} \\
 						\cline{3-4}
 						&  & \parbox[t]{5.6em}{\centering{}Завдання\\видав} & \parbox[t]{5.6em}{\centering{}Завдання\\прийняв} \\
 						\hline
