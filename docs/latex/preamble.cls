@@ -34,7 +34,7 @@
 \RequirePackage{array} % пакет для вирівнювання всередині таблиці
 
 % пакети для форматування відступів та полів
-\RequirePackage[includehead, headsep=0pt, footskip=0pt, top=2cm, bottom=3cm, left=3cm, right=1.5cm]{geometry} % задаємо поля сторінки
+\RequirePackage[includehead, headsep=0pt, footskip=0pt, top=1cm, bottom=3cm, left=3cm, right=1.5cm]{geometry} % задаємо поля сторінки
 \RequirePackage{indentfirst} % відступ для першого рядка абзацу
 \RequirePackage{hanging} % відступ для всіх інших рядків абзацу
 \RequirePackage[shortlabels]{enumitem}	% пакет для форматування списків
