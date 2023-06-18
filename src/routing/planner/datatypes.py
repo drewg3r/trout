@@ -89,3 +89,5 @@ class Route(NamedTuple):
     @property
     def travel_time(self) -> timedelta:
         return self.destination_arrival_time - self.origin_departure_time
+
+

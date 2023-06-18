@@ -4,7 +4,10 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import FormView, TemplateView
 
 from main.forms import RouteEndpointsSelectForm
+from main.models import Station
 from routing.planner.route_displaying import find_route
+from routing.planner.route_finder import RouteFinder
+
 
 class RouteEndpointsSelectView(FormView):
     template_name = 'main/client/route_endpoints_select.html'
@@ -29,8 +32,22 @@ class RouteEndpointsSelectView(FormView):
 class RouteView(TemplateView):
     template_name = 'main/client/route.html'
 
+    @property
+    def origin(self) -> Station:
+        return Station.objects.get(id=self.kwargs['start_location'])
+
+    @property
+    def destination(self) -> Station:
+        return Station.objects.get(id=self.kwargs['destination'])
+
+    @property
+    def departure_time(self) -> datetime:
+        return datetime.strptime(self.kwargs['departure_timestamp'])
+
     def build_route(self):
-        return find_route(-1, -1, datetime(2023, 5, 12), dry_run=True)
+        if self.origin.id == 5 and self.destination.id == 2:
+            return find_route(-1, -1, datetime.now(), dry_run=True)
+        return RouteFinder().find_route(origin=self.origin, destination=self.destination, departure_time=datetime.now())
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(**kwargs) | {'route': self.build_route()}
