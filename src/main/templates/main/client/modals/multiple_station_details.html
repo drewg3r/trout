@@ -1,0 +1,40 @@
+{% load time_render %}
+
+<div class="modal modal-lg fade" id="stationDetailsModal{{ modal_id }}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">{{ line.name }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6">
+            <div class="ratio ratio-1x1">
+{#              <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"#}
+{#                      src="https://www.openstreetmap.org/export/embed.html?bbox={{ waypoint.station.osm_bbox_coordinates }}&amp;layer=mapnik&amp;marker={{ waypoint.station.osm_coordinates }}">#}
+{#              </iframe>#}
+            </div>
+          </div>
+          <div class="col-6">
+
+{#            <div>#}
+{#              Arrival: {% render_time waypoint.arrival_time %}#}
+{#            </div>#}
+{##}
+{#            <div>#}
+{#              Departure: {% render_time waypoint.departure_time %}#}
+{#            </div>#}
+
+            <ol>
+            {% for waypoint in line.intermediate_waypoints %}
+              <li>{{ waypoint.station }}</li>
+            {% endfor %}
+            </ol>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

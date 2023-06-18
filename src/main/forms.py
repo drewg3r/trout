@@ -1,8 +1,20 @@
 from django import forms
+from django.contrib.admin.widgets import AutocompleteSelect
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext as _
 
 from main.models import Station
+
+
+class FakeRelation:
+    def __init__(self, model):
+        self.model = model
+
+
+class CustomAutocompleteSelect(AutocompleteSelect):
+    def __init__(self, model, admin_site):
+        rel = FakeRelation(model)
+        super().__init__(rel, admin_site)
 
 
 class RouteEndpointsSelectForm(forms.Form):

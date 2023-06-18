@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
 from os import environ
 from pathlib import Path
 
@@ -108,13 +109,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'de-de'
-
+LANGUAGE_CODE = 'uk'
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 
 # Static files (CSS, JavaScript, Images)

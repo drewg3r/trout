@@ -6,7 +6,6 @@ from django.views.generic import FormView, TemplateView
 from main.forms import RouteEndpointsSelectForm
 from routing.planner.route_displaying import find_route
 
-
 class RouteEndpointsSelectView(FormView):
     template_name = 'main/client/route_endpoints_select.html'
     form_class = RouteEndpointsSelectForm
